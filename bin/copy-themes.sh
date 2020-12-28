@@ -1,5 +1,6 @@
 themes=(
 	casper
+	norlin
 	attila
 	london
 	massively
