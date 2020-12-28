@@ -1,230 +1,187 @@
-<p align="center">
-  <a href="https://www.jamify.org">
-    <img alt="Jamify" src="https://avatars0.githubusercontent.com/u/73162720?s=200&v=4" />
-  </a>
-</p>
-<h1 align="center">
-  Jamify's blog starter <br/>
-</h1>
+# [Ghost 3.X](https://github.com/TryGhost/Ghost) on [Heroku](http://heroku.com)
 
-[![Released under MIT license.](https://badgen.net/github/license/micromatch/micromatch)](https://github.com/styxlab/gatsby-starter-try-ghost/blob/master/LICENSE)
-[![gatsby-starter-try-ghost npm package version.](https://badgen.net/npm/v/gatsby-starter-try-ghost)](https://www.npmjs.org/package/gatsby-starter-try-ghost)
+Ghost is a free, open, simple blogging platform. Visit the project's website at <http://ghost.org>, or read the docs on <http://support.ghost.org>.
 
-A [Gatsby](https://www.gatsbyjs.org/) starter for creating blogs from headless [Ghost CMS](https://ghost.org/changelog/jamstack/).
+[![GitHub issues](https://img.shields.io/github/issues/SNathJr/ghost-on-heroku)](https://github.com/SNathJr/ghost-on-heroku/issues)
+[![GitHub forks](https://img.shields.io/github/forks/SNathJr/ghost-on-heroku)](https://github.com/SNathJr/ghost-on-heroku/network)
+[![GitHub stars](https://img.shields.io/github/stars/SNathJr/ghost-on-heroku)](https://github.com/SNathJr/ghost-on-heroku/stargazers)
+[![Deploy to Heroku](https://img.shields.io/badge/deploy%20to-heroku-6762a6)](https://heroku.com/deploy)
 
-Turn your Ghost blog into a flaring fast static website. This Gatsby theme is a front-end replacement of the Ghost Handlebars engine featuring an enhanced Ghost Casper look and feel. All content is sourced from a headless Ghost CMS.
+## Disclaimer
 
-&nbsp;
+This is a fork with some improvements from https://github.com/cobyism/ghost-on-heroku. I have forked and improved this repository as the original developer seemed to have abandoned his repo recently. In this repository I have upgraded ghost to ghost 3.X and added cloudinary as a free storage alternative to amazon's s3. If you are still interested with the ghost 1.0 version please visit the original repository.
 
-## 🔥 Variants
+## Ghost version 3.X
 
-Favor [Next.js](https://nextjs.org/) over Gatsby? Head over to [next-cms-ghost](https://github.com/styxlab/next-cms-ghost)!
+The latest release of Ghost is now supported! Changes include:
 
-&nbsp;
+- Requires MySQL database, available through either of two add-ons:
+  - [JawsDB](https://elements.heroku.com/addons/jawsdb) (deploy default)
+  - [ClearDB](https://elements.heroku.com/addons/cleardb)
+- `PUBLIC_URL` config var renamed to `APP_PUBLIC_URL` to give it alphabetical precedence
+- The app is configured to use `Cloudinary File Storage` by default.
+- Dark Mode on `casper` theme! Please make sure to activate your system's dark-mode first.
 
-## 🎓 Tutorials
+### Deploy
 
-Check out the [Tutorials](https://www.jamify.org) for practical guides on using this project.
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
 
-&nbsp;
+If the above button does not work for you, disable anything that might be blocking Heroku from inferring the referrer (e.g. Brave shield), or try this: https://heroku.com/deploy?template=https://github.com/snathjr/ghost-on-heroku (if you're using a fork, make sure to point the template link to your repo).
 
-## 🎉 Demo
+**NOTE**: we do _not_ support deploying by downloading the source file or by copying over a cloned folder. Downloading/copying folders tends to break symlinks, so we recommend that you deploy by clicking the button in this repository or your fork on GitHub.
 
-> Play with the [Demo](https://demo.jamify.org/) to get a first impression.
+### step-by-step tutorial
 
-[![gatsby-starter-try-ghost](https://static.gotsby.org/v1/assets/images/jamify-demo.png)](https://styxlab.github.io)
+The following video is a step by step tutorial:
 
-&nbsp;
+[![thumbnail](https://img.youtube.com/vi/cODvhXMHgYI/0.jpg)](https://www.youtube.com/watch?v=cODvhXMHgYI)
 
-## ✨ Features
+### Things you should know
 
--   Ghost Casper look and feel
--   Images with [lazy-loading and blur-up effect](https://using-gatsby-image.gatsbyjs.org/) 🚀 🆕
--   Infinite Scroll ✨
--   Featured posts pinned on top 🆕
--   Sticky navigation headers
--   Hover on author avatar
--   Styled 404 page
--   SEO optimized
--   Fully responsive
--   Advanced routing 🆕
--   Composable and extensible
--   Incremental build enabled 🚀 🆕
+After deployment,
 
-&nbsp;
+- First, visit Ghost at `https://YOURAPPNAME.herokuapp.com/ghost` to set up your admin account
+- The app may take a few minutes to come to life
+- Your blog will be publicly accessible at `https://YOURAPPNAME.herokuapp.com`
+- If you subsequently set up a [custom domain](https://devcenter.heroku.com/articles/custom-domains) for your blog, you’ll need to update your Ghost blog’s `APP_PUBLIC_URL` environment variable accordingly
+- If you create a lot of content or decide to scale-up the dynos to support more traffic, a more substantial, paid database plan will be required.
 
-## 📦 Included Plugins
+#### 🚫🔻 Do not scale-up beyond a single dyno
 
-The following plugins have been included for convenience:
+[Ghost does not support multiple processes.](https://docs.ghost.org/faq/clustering-sharding-multi-server/)
 
-| Name                                                                                                                                  | Version                                                                                                                         | Description                                             |
-| ------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------- |
-| [`gatsby-theme-ghost-dark-mode`](https://github.com/styxlab/gatsby-theme-try-ghost/tree/master/packages/gatsby-theme-ghost-dark-mode) | [![version](https://badgen.net/npm/v/gatsby-theme-ghost-dark-mode)](https://www.npmjs.com/package/gatsby-theme-ghost-dark-mode) | Dark mode toggle 🌗                                     |
-| [`gatsby-rehype-ghost-links`](https://github.com/styxlab/gatsby-theme-try-ghost/tree/master/packages/gatsby-rehype-ghost-links)       | [![version](https://badgen.net/npm/v/gatsby-rehype-ghost-links)](https://www.npmjs.com/package/gatsby-rehype-ghost-links)       | Rewrite CMS links from absolute to relative             |
-| [`gatsby-rehype-prismjs`](https://github.com/styxlab/gatsby-theme-try-ghost/tree/master/packages/gatsby-rehype-prismjs)               | [![version](https://badgen.net/npm/v/gatsby-rehype-prismjs)](https://www.npmjs.com/package/gatsby-rehype-prismjs)               | Syntax highlighting with [PrismJS](http://prismjs.com/) |
-| [`gatsby-theme-ghost-members`](https://github.com/styxlab/gatsby-theme-try-ghost/tree/master/packages/gatsby-theme-ghost-members) 🆕  | [![version](https://badgen.net/npm/v/gatsby-theme-ghost-members)](https://www.npmjs.com/package/gatsby-theme-ghost-members)     | Member Subscriptions                                    |
+If your Ghost app needs to support substantial traffic, then use a CDN add-on:
 
-If you don't need them, you can take them out in `gatsby-config.js` and `package.json` which may save you some time during the build process.
+- [Fastly](https://elements.heroku.com/addons/fastly)
+- [Edge](https://elements.heroku.com/addons/edge).
 
-&nbsp;
+#### Configuring S3 file uploads
 
-## 🎁 More Plugins
+The blog is configured to use Cloudinary file storage by default. If you want to configure S3 file storage, create an S3 bucket on Amazon AWS, and then specify the following details as environment variables on the Heroku deployment page (or add these environment variables to your app after deployment via the Heroku dashboard):
 
-Additional features can be integrated by installing Gatsby themes or plugins. The following plugins have been tested to work with [`gatsby-starter-try-ghost`](https://github.com/styxlab/gatsby-starter-try-ghost):
+- `S3_ACCESS_KEY_ID` and `S3_ACCESS_SECRET_KEY`: **Required if using S3 uploads**. These fields are the AWS key/secret pair needed to authenticate with Amazon S3. You must have granted this keypair sufficient permissions on the S3 bucket in question in order for S3 uploads to work.
 
-| Name                                                                                                                                   | Version                                                                                                                             | Description                                                                    |
-| -------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------ |
-| [`gatsby-rehype-inline-images`](https://github.com/styxlab/gatsby-theme-try-ghost/tree/master/packages/gatsby-rehype-inline-images) 🆕 | [![version](https://badgen.net/npm/v/gatsby-rehype-inline-images)](https://www.npmjs.com/package/gatsby-rehype-inline-images)       | Lazy-loading inline images with blur-up                                        |
-| [`gatsby-theme-ghost-contact`](https://github.com/styxlab/gatsby-theme-try-ghost/tree/master/packages/gatsby-theme-ghost-contact)      | [![version](https://badgen.net/npm/v/gatsby-theme-ghost-contact)](https://www.npmjs.com/package/gatsby-theme-ghost-contact)         | Contact page                                                                   |
-| [`gatsby-theme-ghost-commento`](https://github.com/styxlab/gatsby-theme-try-ghost/tree/master/packages/gatsby-theme-ghost-commento)    | [![version](https://badgen.net/npm/v/gatsby-theme-ghost-commento)](https://www.npmjs.com/package/gatsby-theme-ghost-commento)       | Commenting system with [Commento](https://commento.io/)                        |
-| [`gatsby-theme-ghost-toc`](https://github.com/styxlab/gatsby-theme-try-ghost/tree/master/packages/gatsby-theme-ghost-toc) 🆕           | [![version](https://badgen.net/npm/v/gatsby-theme-ghost-toc)](https://www.npmjs.com/package/gatsby-theme-ghost-toc)                 | Table of Contents                                                              |
-| [`gatsby-plugin-ackee-tracker`](https://github.com/burnsy/gatsby-plugin-ackee-tracker)                                                 | [![version](https://badgen.net/npm/v/gatsby-plugin-ackee-tracker)](https://www.npmjs.com/package/gatsby-plugin-ackee-tracker)       | Site tracking with [Ackee](https://github.com/electerious/Ackee)               |
-| [`gatsby-plugin-google-analytics`](https://github.com/gatsbyjs/gatsby/tree/master/packages/gatsby-plugin-google-analytics)             | [![version](https://badgen.net/npm/v/gatsby-plugin-google-analytics)](https://www.npmjs.com/package/gatsby-plugin-google-analytics) | Site tracking with [Google Analytics](https://developers.google.com/analytics) |
+- `S3_BUCKET_NAME`: **Required if using S3 uploads**. This is the name you gave to your S3 bucket.
 
-&nbsp;
+- `S3_BUCKET_REGION`: **Required if using S3 uploads**. Specify the region the bucket has been created in, using slug format (e.g. `us-east-1`, `eu-west-1`). A full list of S3 regions is [available here](http://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region).
 
-## 🏁 Getting Started
+- `S3_ASSET_HOST_URL`: Optional, even if using S3 uploads. Use this variable to specify the S3 bucket URL in virtual host style, path style or using a custom domain. You should also include a trailing slash (example `https://my.custom.domain/`). See [this page](http://docs.aws.amazon.com/AmazonS3/latest/dev/VirtualHosting.html) for details.
 
-1. Install this starter by running
+Once your app is up and running with these variables in place, you should be able to upload images via the Ghost interface and they’ll be stored in Amazon S3. :sparkles:
 
-    ```bash
-    gatsby new try-ghost https://github.com/styxlab/gatsby-starter-try-ghost
-    ```
+##### Provisioning an S3 bucket using an add-on
 
-2. Change directory
+If you’d prefer not to configure S3 manually, you can provision the [Bucketeer add-on](https://devcenter.heroku.com/articles/bucketeer)
+to get an S3 bucket (Bucketeer starts at \$5/mo).
 
-    ```bash
-    cd try-ghost
-    ```
-
-3. Run
-
-    ```bash
-    yarn develop
-    ```
-
-    and visit your site at `http://localhost:8000`.
-
-&nbsp;
-
-## 💡 Configure
-
-```js
-//siteConfig.js
-module.exports = {
-    // Do not include a trailing slash!
-    siteUrl: `https://your-blog.com`,
-
-    // Maximum number of post shown per page
-    // Infinite Scroll: Initial chunk of posts, subsequent posts are fetched one by one
-    postsPerPage: 3,
-
-    // This allows an alternative site title for meta data for pages.
-    siteTitleMeta: `Gatsby Starter Ghost CMS`,
-
-    // This allows an site description for meta data for pages.
-    siteDescriptionMeta: `Turn your Ghost blog into a flaring fast static site with Gatsby`,
-
-    // Used for App and Offline manifest e.g. Mobile Home Screen
-    shortTitle: `Ghost`,
-    siteIcon: `favicon.png`,
-    backgroundColor: `#e9e9e9`,
-    themeColor: `#15171A`,
-
-    // Include Gatsby images for lazy loading and image optimizations (default: true)
-    gatsbyImages: true,
-
-    // Overwrite navigation menu (default: []), label is case sensitive
-    // overwriteGhostNavigation: [{ label: `Home`, url: `/` }],
-};
-```
-
-In the configuration shown above, the most important fields to be changed are `siteUrl`, `siteTitleMeta` and `siteDescriptionMeta`. Update at least those to fit your needs.
-
-&nbsp;
-
-## 🔑 Ghost Content API keys
-
-All content is sourced from a Ghost CMS. By default, content is fetched from the demo location at `https://cms.gotsby.org`. Surely you want to source your own content. There are two ways to make your content keys available. Choose the method according to your build scenario.
-
-### Building with cloud providers
-
-If you build your project with a cloud provider (e.g. Gatsby, Netlify, Vercel), the best option is to provide the keys with environment variables:
-
-| Key                   | Value (example)            |
-| --------------------- | -------------------------- |
-| GHOST_API_URL         | http:\/\/localhost:2368    |
-| GHOST_CONTENT_API_KEY | 9fccdb0e4ea5b572e2e5b92942 |
-
-The place where you can define them depends on the provider, but you usually find the option under the site settings. This avoids publishing keys in a public repository and is most secure.
-
-### Building locally
-
-If you build locally or on a private network where the build directory is not accessible to the world, you can safely add a new `.ghost.json` file in your base directory with the following JSON structure:
+To configure S3 via Bucketeer, leave all the S3 deployment fields blank and deploy your
+Ghost blog. Once your blog is deployed, run the following commands from your terminal:
 
 ```bash
+# Provision an Amazon S3 bucket
+heroku addons:create bucketeer --app YOURAPPNAME
 
-    {
-        "development": {
-            "apiUrl": "http://localhost:2368",
-            "contentApiKey": "9fccdb0e4ea5b572e2e5b92942"
-        },
-        "production": {
-            "apiUrl": "http://localhost:2368",
-            "contentApiKey": "9fccdb0e4ea5b572e2e5b92942"
-        }
-    }
+# Additionally, the bucket's region must be set to formulate correct URLs
+# (Find the "Region" in your Bucketeer Add-on's web dashboard.)
+heroku config:set S3_BUCKET_REGION=us-east-1 --app YOURAPPNAME
 ```
 
-This file is part of `.gitignore` to avoid accidentally publishing it to your public repository. Change the `apiUrl` and `contentApiKey` to match your own Ghost CMS Content API keys.
+#### Configuring WebDAV file uploads
 
-&nbsp;
+As an alternative to S3 and Cloudinary, you can also use your own WebDAV server, via the [ghost-webdav-adapter](https://github.com/bartt/ghost-webdav-storage-adapter) plugin. To use these, simply specify the following details as environment variables on the Heroku deployment page (or add these environment variables to your app after deployment via the Heroku dashboard):
 
-## 🤯 Ensure headless mode of Ghost CMS
+- `WEBDAV_SERVER_URL`: **Required if using WebDAV uploads**. The URL to access your WebDAV server. Note that this requires the `https` format (not `dav://` or `davs://`). Example: `https://mysite.com:2078`.
 
-For best SEO results it is strongly recommended to disable the default Ghost Handlebars theme front-end by selecting the _Make this site private_ flag within your Ghost admin settings. This enables password protection in front of the Ghost install and sets `<meta name="robots" content="noindex" />` so your Gatsby front-end becomes the authoritative source for search engines.
+- `WEBDAV_USERNAME` and `WEBDAV_PASSWORD`: Optional even if using WebDAV uploads. These are the username and password used to log in to your WebDAV account. Unless you're using an open and unsecured server, you'll probably need to set these options too.
 
-&nbsp;
+- `WEBDAV_PATH_PREFIX`: Optional even if using WebDAV uploads. Subfolder on the WebDAV server where you want to store the files. Defaults to the main directory or `/`. Example: `/ghost-uploads`.
 
-## 💫 Deploy
+- `WEBDAV_STORAGE_PATH_PREFIX`: Optional even if using WebDAV uploads. This is the location where the public will be able to access the uploaded file. Defaults to `content/`, which makes Ghost server the files for you, but can also be an external domain such as `https://media.mysite.com/ghost-files`.
 
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/styxlab/gatsby-starter-try-ghost)
+The difference between `WEBDAV_PATH_PREFIX` and `WEBDAV_STORAGE_PATH_PREFIX` is this: you *upload* the files to `WEBDAV_PATH_PREFIX` via WebDAV, but you *download* them from `WEBDAV_STORAGE_PATH_PREFIX` using ordinary HTTP.
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/import/project?template=https://github.com/styxlab/gatsby-starter-try-ghost)
+For more detailed information, you can refer to [the ghost-webdav-adapter repo](https://github.com/bartt/ghost-webdav-storage-adapter)
 
-&nbsp;
+##### Known Issue
 
-## 🔧 Update
+There is a bug (that only occurs sometimes): when uploading a file to a subdirectory, it creates one level of the directory and then fails, so you have to retry to get to the next level. For example: if it wants to save the file 2020/06/12/example.jpg but only the 2020 folder exists, then it will take three tries (refresh the page and upload again) to get it working:
 
-It is recommended to install [npm-upgrade](https://www.npmjs.com/package/npm-upgrade) with `sudo npm install npm-upgrade -g`. Change into the base directory and update all packages with:
+- create 2020/06 and fail
+- create 2020/06/12 and fail
+- upload the file to 2020/06/12/example.jpg
+
+This seems to be a bug in the storage adapter plugin itself (yet to be reported).
+
+**Note:** Remember to **refresh** the page on each retry. Retrying without refreshing the page does not seem to work. If you don't succeed after 3-4 tries, there might be something else wrong with your configuration.
+
+#### Setting up SMTP service
+
+When you spin up your heroku dyno for the first time, mailgun is by default setup with a sandbox account. It means, sending emails to only authorized reciepients is supported. If you want to send emails / invite your collaborators you need to set their email in authorized recipient section on mailgun dashboard. See https://help.mailgun.com/hc/en-us/articles/217531258-Authorized-Recipients for more.
+
+A more permanent solution would be to use a custom domain and verify your domain via mailgun customer support. Cheers!
+
+FYI: You can access mailgun dashboard by visiting heroku dashboard > click on your app > resources tab > click on mailgun addon.
+
+#### Dark Mode is now available
+
+As of version 3.0.0 Dark mode is available on Ghost Casper theme. Please make sure your's system's dark mode is enabled first to activate dark mode.
+
+### How this works
+
+This repository is a [Node.js](https://nodejs.org) web application that specifies Ghost as a dependency, and makes a deploy button available.
+
+- Ghost and Casper theme versions are declared in the Node app's [`package.json`](package.json)
+- Versions are locked and managed using [npm](https://www.npmjs.com/)
+- Scales across processor cores in larger dynos via [Node cluster API](https://nodejs.org/dist/latest-v10.x/docs/api/cluster.html)
+
+## Updating source code
+
+Optionally after deployment, to push Ghost upgrades or work with source code, clone this repo (or a fork) and connect it with the Heroku app:
 
 ```bash
-    npm-upgrade
+git clone https://github.com/snathjr/ghost-on-heroku
+cd ghost-on-heroku
+
+heroku git:remote -a YOURAPPNAME
+heroku info
 ```
 
-You will be prompted to update all packages within your `package.json` file. Next, download the new packages:
+Then you can push commits to the Heroku app, triggering new deployments:
 
 ```bash
-    yarn
-    yarn clean
+git add .
+git commit -m "Important changes"
+git push heroku master
 ```
 
-The update process is now complete and you can start a new build with `yarn build` (or `yarn develop`).
+Watch the app's server-side behavior to see errors and request traffic:
 
-&nbsp;
+```bash
+heroku logs -t
+```
 
-## 💣 Reporting issues
+See more about [deploying to Heroku with git](https://devcenter.heroku.com/articles/git).
 
-Please report all bugs and issues at [gatsby-theme-try-ghost/issues](https://github.com/styxlab/gatsby-theme-try-ghost/issues) as all development is happening there.
+### Upgrading Ghost
 
-&nbsp;
+This repository locks Ghost to the "last tested good version" using the standard `package-lock.json` file. If you want to upgrade Ghost on your own,
+you will need to clone or fork this repo as described above. You will then be able to run:
 
-## 🧐 Disclaimer
+```bash
+npm upgrade ghost
+git add package.json package-lock.json
+git commit -m 'Update dependencies'
+git push heroku master
+```
 
-This project is not affiliated with [Gatsby](https://www.gatsbyjs.org/) or [Ghost](https://ghost.org/).
+If you're worried about packages beyond the root `ghost` server being outdated, you can check using `npm outdated`.
 
-&nbsp;
+## Problems?
 
-# Copyright & License
+If you have problems using your instance of Ghost, you should check the [official documentation](http://support.ghost.org/) or
+open an issue on [the official issue tracker](https://github.com/TryGhost/Ghost/issues). If you discover an issue with the
+deployment process provided by _this repository_, then [open an issue here](https://github.com/snathjr/ghost-on-heroku).
 
-Copyright (c) 2020 styxlab - Released under the [MIT license](LICENSE).
+## License
+
+Released under the [MIT license](./LICENSE), just like the Ghost project itself.
