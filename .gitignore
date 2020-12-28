@@ -8,3 +8,8 @@ content/data/ghost-local.db
 
 content/themes/*
 !content/themes/.gitkeep
+bin/.DS_Store
+.DS_Store
+.DS_Store
+.DS_Store
+.DS_Store
