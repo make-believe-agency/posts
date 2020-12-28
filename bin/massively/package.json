@@ -1,0 +1,94 @@
+{
+  "_args": [
+    [
+      "github:tryghost/massively#1.0.2",
+      "/Users/phil/Documents/GitHub/posts"
+    ]
+  ],
+  "_from": "github:tryghost/massively#1.0.2",
+  "_id": "massively@github:tryghost/massively#2b7fe131a5b3848b2a8a8367b8b6fa5109cac969",
+  "_inBundle": false,
+  "_integrity": "",
+  "_location": "/massively",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "git",
+    "raw": "github:tryghost/massively#1.0.2",
+    "rawSpec": "github:tryghost/massively#1.0.2",
+    "saveSpec": "github:tryghost/massively#1.0.2",
+    "fetchSpec": null,
+    "gitCommittish": "1.0.2"
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "github:tryghost/massively#2b7fe131a5b3848b2a8a8367b8b6fa5109cac969",
+  "_spec": "github:tryghost/massively#1.0.2",
+  "_where": "/Users/phil/Documents/GitHub/posts",
+  "author": {
+    "name": "Ghost Foundation",
+    "email": "hello@ghost.org",
+    "url": "https://ghost.org"
+  },
+  "bugs": {
+    "url": "https://github.com/TryGhost/Massively/issues"
+  },
+  "config": {
+    "posts_per_page": 12
+  },
+  "contributors": [
+    {
+      "name": "ajlkn",
+      "email": "aj@lkn.io",
+      "url": "https://twitter.com/ajlkn"
+    }
+  ],
+  "demo": "https://massively.ghost.io",
+  "description": "This is Massively, a text-heavy, article-oriented theme for Ghost.",
+  "devDependencies": {
+    "beeper": "^1.1.1",
+    "gscan": "^2.0.0",
+    "gulp": "4.0.0",
+    "gulp-livereload": "4.0.1",
+    "gulp-sass": "^4.0.2",
+    "gulp-sourcemaps": "^2.6.4",
+    "gulp-watch": "5.0.1",
+    "gulp-zip": "4.2.0",
+    "node-sass": "^4.10.0"
+  },
+  "engines": {
+    "ghost": ">=2.0.0",
+    "ghost-api": "v2"
+  },
+  "gpm": {
+    "type": "theme",
+    "categories": [
+      "Minimal",
+      "Magazine"
+    ]
+  },
+  "homepage": "https://github.com/TryGhost/Massively#readme",
+  "keywords": [
+    "ghost",
+    "theme",
+    "ghost-theme"
+  ],
+  "license": "MIT",
+  "name": "massively",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TryGhost/Massively.git"
+  },
+  "screenshots": {
+    "desktop": "assets/screenshot.jpg"
+  },
+  "scripts": {
+    "dev": "gulp",
+    "preship": "yarn test",
+    "pretest": "gulp build",
+    "ship": "STATUS=$(git status --porcelain); echo $STATUS; if [ -z \"$STATUS\" ]; then yarn version && git push --follow-tags; fi",
+    "test": "gscan .",
+    "zip": "gulp zip"
+  },
+  "version": "1.0.1"
+}

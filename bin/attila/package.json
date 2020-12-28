@@ -1,0 +1,95 @@
+{
+  "_args": [
+    [
+      "github:zutrinken/attila#1.13.0",
+      "/Users/phil/Documents/GitHub/posts"
+    ]
+  ],
+  "_from": "github:zutrinken/attila#1.13.0",
+  "_id": "attila@github:zutrinken/attila#227bffca79395e8a0b93f5d12d1d3d90146ca665",
+  "_inBundle": false,
+  "_integrity": "",
+  "_location": "/attila",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "git",
+    "raw": "github:zutrinken/attila#1.13.0",
+    "rawSpec": "github:zutrinken/attila#1.13.0",
+    "saveSpec": "github:zutrinken/attila#1.13.0",
+    "fetchSpec": null,
+    "gitCommittish": "1.13.0"
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "github:zutrinken/attila#227bffca79395e8a0b93f5d12d1d3d90146ca665",
+  "_spec": "github:zutrinken/attila#1.13.0",
+  "_where": "/Users/phil/Documents/GitHub/posts",
+  "author": {
+    "name": "Peter Amende",
+    "email": "xoxo@zutrinken.com",
+    "url": "https://zutrinken.com"
+  },
+  "bugs": {
+    "url": "https://github.com/zutrinken/attila/issues"
+  },
+  "config": {
+    "posts_per_page": 10,
+    "image_sizes": {
+      "s": {
+        "width": 320
+      },
+      "m": {
+        "width": 640
+      },
+      "l": {
+        "width": 960
+      },
+      "xl": {
+        "width": 1920
+      }
+    }
+  },
+  "demo": "https://attila.zutrinken.com",
+  "description": "Ghost Theme",
+  "devDependencies": {
+    "autoprefixer": "^9.1.5",
+    "grunt": "^1.0.4",
+    "grunt-contrib-clean": "^1.1.0",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-contrib-uglify": "^3.3.0",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-postcss": "^0.9.0",
+    "grunt-sass": "^2.1.0",
+    "grunt-zip": "^0.18.1",
+    "load-grunt-tasks": "^3.5.2"
+  },
+  "engines": {
+    "ghost": ">=2.1.0",
+    "ghost-api": "v2"
+  },
+  "gpm": {
+    "type": "theme",
+    "categories": [
+      "Minimal",
+      "Personal Blogs"
+    ]
+  },
+  "homepage": "https://github.com/zutrinken/attila#readme",
+  "keywords": [
+    "ghost-theme",
+    "ghost",
+    "theme"
+  ],
+  "license": "MIT",
+  "name": "attila",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zutrinken/attila.git"
+  },
+  "screenshots": {
+    "desktop": "src/screenshot-desktop.jpg",
+    "mobile": "src/screenshot-mobile.jpg"
+  },
+  "version": "1.13.0"
+}

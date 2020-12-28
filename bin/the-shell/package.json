@@ -1,0 +1,82 @@
+{
+  "_args": [
+    [
+      "github:mityalebedev/The-Shell#v2.0.0",
+      "/Users/phil/Documents/GitHub/posts"
+    ]
+  ],
+  "_from": "github:mityalebedev/The-Shell#v2.0.0",
+  "_id": "the-shell@github:mityalebedev/The-Shell#aa1a683c6462c72008ad07b680bf86a4e3bdba08",
+  "_inBundle": false,
+  "_integrity": "",
+  "_location": "/the-shell",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "git",
+    "raw": "github:mityalebedev/The-Shell#v2.0.0",
+    "rawSpec": "github:mityalebedev/The-Shell#v2.0.0",
+    "saveSpec": "github:mityalebedev/The-Shell#v2.0.0",
+    "fetchSpec": null,
+    "gitCommittish": "v2.0.0"
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "github:mityalebedev/The-Shell#aa1a683c6462c72008ad07b680bf86a4e3bdba08",
+  "_spec": "github:mityalebedev/The-Shell#v2.0.0",
+  "_where": "/Users/phil/Documents/GitHub/posts",
+  "author": {
+    "name": "Dmitry Lebedev",
+    "email": "mityalebedev@me.com",
+    "url": "https://github.com/mityalebedev"
+  },
+  "bugs": {
+    "url": "https://github.com/mityalebedev/The-Shell/issues"
+  },
+  "config": {
+    "posts_per_page": 5
+  },
+  "contributors": "https://github.com/mityalebedev/The-Shell/graphs/contributors",
+  "demo": "https://ghostintheshell.ghost.io",
+  "description": "Theme for Ghost which use 'Ghost in The Shell' animation series palette colors",
+  "devDependencies": {
+    "browser-sync": "^2.26.3",
+    "gulp": "^4.0.0",
+    "gulp-autoprefixer": "^6.0.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-sourcemaps": "^2.6.4",
+    "gulp-zip": "^4.2.0"
+  },
+  "engines": {
+    "ghost": ">=2.0.0",
+    "ghost-api": "v2"
+  },
+  "gpm": {
+    "type": "theme",
+    "categories": [
+      "Minimal",
+      "Personal Blogs"
+    ]
+  },
+  "homepage": "https://github.com/mityalebedev/The-Shell#readme",
+  "keywords": [
+    "ghost",
+    "theme",
+    "ghost-theme"
+  ],
+  "license": "MIT",
+  "name": "the-shell",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mityalebedev/The-Shell.git"
+  },
+  "screenshots": {
+    "desktop": "assets/screenshot-desktop.jpg",
+    "mobile": "assets/screenshot-mobile.jpg"
+  },
+  "scripts": {
+    "test": "gscan .",
+    "zip": "gulp release"
+  },
+  "version": "2.0.0"
+}

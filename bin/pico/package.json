@@ -1,0 +1,118 @@
+{
+  "_args": [
+    [
+      "github:tryghost/pico",
+      "/Users/phil/Documents/GitHub/posts"
+    ]
+  ],
+  "_from": "github:tryghost/pico",
+  "_id": "pico@github:tryghost/pico#bfb29c1743be0ef978e9213caf1e11eebc52255f",
+  "_inBundle": false,
+  "_integrity": "",
+  "_location": "/pico",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "git",
+    "raw": "github:tryghost/pico",
+    "rawSpec": "github:tryghost/pico",
+    "saveSpec": "github:tryghost/pico",
+    "fetchSpec": null,
+    "gitCommittish": null
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "github:tryghost/pico#bfb29c1743be0ef978e9213caf1e11eebc52255f",
+  "_spec": "github:tryghost/pico",
+  "_where": "/Users/phil/Documents/GitHub/posts",
+  "author": {
+    "name": "Ghost Foundation",
+    "email": "hello@ghost.org",
+    "url": "https://ghost.org"
+  },
+  "browserslist": [
+    "defaults"
+  ],
+  "bugs": {
+    "url": "https://github.com/TryGhost/Pico/issues"
+  },
+  "config": {
+    "posts_per_page": 15,
+    "image_sizes": {
+      "xxs": {
+        "width": 30
+      },
+      "xs": {
+        "width": 100
+      },
+      "s": {
+        "width": 300
+      },
+      "m": {
+        "width": 600
+      },
+      "l": {
+        "width": 1200
+      },
+      "xl": {
+        "width": 2000
+      }
+    }
+  },
+  "contributors": "https://github.com/TryGhost/Pico/graphs/contributors",
+  "demo": "https://pico.ghost.io",
+  "description": "A paid members publishing theme for Ghost",
+  "devDependencies": {
+    "autoprefixer": "10.1.0",
+    "cssnano": "4.1.10",
+    "gscan": "3.6.1",
+    "gulp": "4.0.2",
+    "gulp-livereload": "4.0.2",
+    "gulp-postcss": "9.0.0",
+    "gulp-sourcemaps": "3.0.0",
+    "gulp-uglify": "3.0.2",
+    "gulp-util": "3.0.8",
+    "gulp-watch": "5.0.1",
+    "gulp-zip": "5.0.2",
+    "postcss": "8.2.1",
+    "postcss-color-function": "4.1.0",
+    "postcss-custom-properties": "10.0.0",
+    "postcss-easy-import": "3.0.0"
+  },
+  "engines": {
+    "ghost": ">=3.0.0",
+    "ghost-api": "v3"
+  },
+  "gpm": {
+    "type": "theme",
+    "categories": [
+      "Minimal",
+      "Magazine"
+    ]
+  },
+  "homepage": "https://github.com/TryGhost/Pico#readme",
+  "keywords": [
+    "ghost",
+    "theme",
+    "ghost-theme"
+  ],
+  "license": "MIT",
+  "name": "pico",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TryGhost/Pico.git"
+  },
+  "screenshots": {
+    "desktop": "assets/screenshot-desktop.jpg"
+  },
+  "scripts": {
+    "dev": "gulp",
+    "preship": "yarn test",
+    "pretest": "gulp build",
+    "ship": "STATUS=$(git status --porcelain); echo $STATUS; if [ -z \"$STATUS\" ]; then yarn version && git push --follow-tags; fi",
+    "test": "gscan .",
+    "test:ci": "gscan --fatal --verbose .",
+    "zip": "gulp zip"
+  },
+  "version": "1.0.0"
+}

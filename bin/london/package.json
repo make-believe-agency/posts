@@ -1,0 +1,108 @@
+{
+  "_args": [
+    [
+      "github:tryghost/london#1.0.0",
+      "/Users/phil/Documents/GitHub/posts"
+    ]
+  ],
+  "_from": "github:tryghost/london#1.0.0",
+  "_id": "london@github:tryghost/london#330dbc9252ecbfa83effe47ed4a889a69e8c39ec",
+  "_inBundle": false,
+  "_integrity": "",
+  "_location": "/london",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "git",
+    "raw": "github:tryghost/london#1.0.0",
+    "rawSpec": "github:tryghost/london#1.0.0",
+    "saveSpec": "github:tryghost/london#1.0.0",
+    "fetchSpec": null,
+    "gitCommittish": "1.0.0"
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "github:tryghost/london#330dbc9252ecbfa83effe47ed4a889a69e8c39ec",
+  "_spec": "github:tryghost/london#1.0.0",
+  "_where": "/Users/phil/Documents/GitHub/posts",
+  "author": {
+    "name": "Ghost Foundation",
+    "email": "hello@ghost.org",
+    "url": "https://ghost.org"
+  },
+  "bugs": {
+    "url": "https://github.com/TryGhost/London/issues"
+  },
+  "config": {
+    "posts_per_page": 15,
+    "image_sizes": {
+      "xs": {
+        "width": 100
+      },
+      "s": {
+        "width": 300
+      },
+      "m": {
+        "width": 600
+      },
+      "l": {
+        "width": 1200
+      },
+      "xl": {
+        "width": 2000
+      }
+    }
+  },
+  "contributors": "https://github.com/TryGhost/London/graphs/contributors",
+  "demo": "https://london.ghost.io",
+  "description": "A minimum, image-centric theme for Ghost.",
+  "devDependencies": {
+    "autoprefixer": "6.3.6",
+    "cssnano": "3.7.1",
+    "gscan": "^2.0.0",
+    "gulp": "3.9.1",
+    "gulp-filter": "5.1.0",
+    "gulp-livereload": "3.8.1",
+    "gulp-postcss": "6.1.1",
+    "gulp-sourcemaps": "1.6.0",
+    "gulp-uglify": "3.0.1",
+    "gulp-util": "3.0.7",
+    "gulp-watch": "4.3.8",
+    "gulp-zip": "4.0.0",
+    "postcss-color-function": "2.0.1",
+    "postcss-custom-properties": "5.0.1",
+    "postcss-easy-import": "1.0.1"
+  },
+  "engines": {
+    "ghost": ">=2.0.0"
+  },
+  "gpm": {
+    "type": "theme",
+    "categories": [
+      "Minimal",
+      "Magazine"
+    ]
+  },
+  "homepage": "https://github.com/TryGhost/London#readme",
+  "keywords": [
+    "ghost",
+    "theme",
+    "ghost-theme"
+  ],
+  "license": "MIT",
+  "name": "london",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TryGhost/London.git"
+  },
+  "screenshots": {
+    "desktop": "assets/screenshot-desktop.jpg",
+    "mobile": "assets/screenshot-mobile.jpg"
+  },
+  "scripts": {
+    "dev": "gulp",
+    "test": "gscan .",
+    "zip": "gulp zip"
+  },
+  "version": "1.0.0"
+}

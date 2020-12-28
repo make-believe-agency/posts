@@ -1,0 +1,46 @@
+{
+  "_args": [
+    [
+      "github:sethlilly/Vapor#v1.6.0",
+      "/Users/phil/Documents/GitHub/posts"
+    ]
+  ],
+  "_from": "github:sethlilly/Vapor#v1.6.0",
+  "_id": "vapor@github:sethlilly/Vapor#974edec6d08f382054d37814a998b97a49bacdab",
+  "_inBundle": false,
+  "_integrity": "",
+  "_location": "/vapor",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "git",
+    "raw": "github:sethlilly/Vapor#v1.6.0",
+    "rawSpec": "github:sethlilly/Vapor#v1.6.0",
+    "saveSpec": "github:sethlilly/Vapor#v1.6.0",
+    "fetchSpec": null,
+    "gitCommittish": "v1.6.0"
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "github:sethlilly/Vapor#974edec6d08f382054d37814a998b97a49bacdab",
+  "_spec": "github:sethlilly/Vapor#v1.6.0",
+  "_where": "/Users/phil/Documents/GitHub/posts",
+  "author": {
+    "email": "seth.lilly@gmail.com"
+  },
+  "config": {
+    "posts_per_page": 10
+  },
+  "description": "A minimal, responsive theme for Ghost.",
+  "engines": {
+    "ghost": ">=2.0.0"
+  },
+  "keywords": [
+    "ghost",
+    "theme",
+    "ghost-theme"
+  ],
+  "license": "MIT",
+  "name": "vapor",
+  "version": "1.6.0"
+}

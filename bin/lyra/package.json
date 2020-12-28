@@ -1,0 +1,119 @@
+{
+  "_args": [
+    [
+      "github:tryghost/lyra",
+      "/Users/phil/Documents/GitHub/posts"
+    ]
+  ],
+  "_from": "github:tryghost/lyra",
+  "_id": "lyra@github:tryghost/lyra#519f18d6a604d924a1992c2d52c5348637cfa1e6",
+  "_inBundle": false,
+  "_integrity": "",
+  "_location": "/lyra",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "git",
+    "raw": "github:tryghost/lyra",
+    "rawSpec": "github:tryghost/lyra",
+    "saveSpec": "github:tryghost/lyra",
+    "fetchSpec": null,
+    "gitCommittish": null
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "github:tryghost/lyra#519f18d6a604d924a1992c2d52c5348637cfa1e6",
+  "_spec": "github:tryghost/lyra",
+  "_where": "/Users/phil/Documents/GitHub/posts",
+  "author": {
+    "name": "Ghost Foundation",
+    "email": "hello@ghost.org",
+    "url": "https://ghost.org"
+  },
+  "browserslist": [
+    "defaults"
+  ],
+  "bugs": {
+    "url": "https://github.com/TryGhost/Starter/issues"
+  },
+  "config": {
+    "posts_per_page": 15,
+    "image_sizes": {
+      "xxs": {
+        "width": 30
+      },
+      "xs": {
+        "width": 100
+      },
+      "s": {
+        "width": 300
+      },
+      "m": {
+        "width": 600
+      },
+      "l": {
+        "width": 1200
+      },
+      "xl": {
+        "width": 2000
+      }
+    }
+  },
+  "contributors": "https://github.com/TryGhost/Starter/graphs/contributors",
+  "demo": "https://lyra.ghost.io",
+  "description": "A premium publication theme for Ghost.",
+  "devDependencies": {
+    "@tryghost/release-utils": "0.6.9",
+    "autoprefixer": "10.1.0",
+    "cssnano": "4.1.10",
+    "gscan": "3.6.1",
+    "gulp": "4.0.2",
+    "gulp-livereload": "4.0.2",
+    "gulp-postcss": "9.0.0",
+    "gulp-sourcemaps": "3.0.0",
+    "gulp-uglify": "3.0.2",
+    "gulp-util": "3.0.8",
+    "gulp-watch": "5.0.1",
+    "gulp-zip": "5.0.2",
+    "postcss": "8.2.1",
+    "postcss-color-function": "4.1.0",
+    "postcss-custom-properties": "10.0.0",
+    "postcss-easy-import": "3.0.0"
+  },
+  "engines": {
+    "ghost": ">=3.0.0",
+    "ghost-api": "v3"
+  },
+  "gpm": {
+    "type": "theme",
+    "categories": [
+      "Minimal",
+      "Magazine"
+    ]
+  },
+  "homepage": "https://github.com/TryGhost/Starter#readme",
+  "keywords": [
+    "ghost",
+    "theme",
+    "ghost-theme"
+  ],
+  "license": "MIT",
+  "name": "lyra",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TryGhost/Starter.git"
+  },
+  "screenshots": {
+    "desktop": "assets/screenshot-desktop.jpg"
+  },
+  "scripts": {
+    "dev": "gulp",
+    "preship": "yarn test",
+    "pretest": "gulp build",
+    "ship": "STATUS=$(git status --porcelain); echo $STATUS; if [ -z \"$STATUS\" ]; then yarn version && git push --follow-tags; fi",
+    "test": "gscan .",
+    "test:ci": "gscan --fatal --verbose .",
+    "zip": "gulp zip"
+  },
+  "version": "1.0.0"
+}
