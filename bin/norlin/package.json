@@ -1,0 +1,35 @@
+{
+  "name": "norlin",
+  "description": "Norlin - Personal Dark Theme for Ghost",
+  "version": "1.0.0",
+  "engines": {
+    "ghost": ">=3.0.0",
+    "ghost-api": "v3"
+  },
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "browser-sync": "^2.26.7",
+    "gulp-notify": "^3.2.0",
+    "gulp-autoprefixer": "^7.0.0",
+    "gulp-clean-css": "^4.2.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-sass": "^4.0.2",
+    "gulp-uglify-es": "^1.0.4",
+    "gulp-zip": "5.0.0",
+    "del": "^5.1.0"
+  },
+  "author": {
+    "name": "Anvod Studio",
+    "email": "anvodstudio@gmail.com",
+    "url": "http://anvodstudio.com/"
+  },
+  "keywords": [
+    "ghost",
+    "theme",
+    "dark",
+    "ghost-theme"
+  ],
+  "config": {
+    "posts_per_page": 8
+  }
+}

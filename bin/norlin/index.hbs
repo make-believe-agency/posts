@@ -1,0 +1,44 @@
+{{!< default}}
+{{!-- The tag above means: insert everything in this file
+into the {body} of the default.hbs template --}}
+
+{{!-- begin hero --}}
+{{#if @site.cover_image}}
+<section class="hero">
+  <div class="hero__inner">
+    <div class="hero__image">
+      <img class="lazy" data-src="{{@site.cover_image}}" alt="{{@site.title}}">
+    </div>
+    <div class="hero__content">
+      <h1 class="hero__title">{{@site.title}}</h1>
+      <p class="hero__desc">{{@site.description}}</p>
+    </div>
+  </div>
+</section>
+{{else}}
+<section class="hero-without-image">
+  <div class="hero-inner">
+    <div class="hero-content">
+      <h1 class="hero__title">{{@site.title}}</h1>
+      <p class="hero__desc">{{@site.description}}</p>
+    </div>
+  </div>
+</section>
+{{/if}}
+{{!-- end hero --}}
+
+{{> "featured-posts"}}
+
+<div class="container">
+  <div class="row">
+    <div class="col col-12">
+      <div class="container__inner">
+        <div class="row grid">
+          {{> "loop"}}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{{pagination}}

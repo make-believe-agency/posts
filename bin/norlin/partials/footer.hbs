@@ -1,0 +1,26 @@
+<!-- begin footer-widgets -->
+<section class="footer-widgets">
+  <div class="container">
+    <div class="row">
+      {{> "footer-widgets/widget-recent-posts"}}
+      {{> "footer-widgets/widget-tag-cloud"}}
+      {{> "footer-widgets/widget-subscribe"}}
+    </div>
+  </div>
+</section>
+<!-- end footer-widgets -->
+
+<!-- begin footer -->
+<footer class="footer">
+  <div class="container">
+    <div class="row">
+      <div class="col col-12">
+        <div class="footer__inner">
+          <div class="copyright">{{date format="YYYY"}} &copy; <a href="{{@site.url}}">{{@site.title}}</a>. {{t "All Right Reserved."}} {{{t "Published with {ghostlink}" ghostlink="<a href=\"https://ghost.org\">Ghost</a>"}}}</div>
+          {{> "social-icons"}}
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- end footer -->

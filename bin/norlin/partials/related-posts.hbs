@@ -1,0 +1,70 @@
+{{!-- Related Posts --}}
+{{#get "posts" include="tags,authors" limit="3" filter="id:-{{comment_id}}+tag:{{primary_tag.slug}}" as |related|}}
+  {{#if posts}}
+    <div class="container">
+      <div class="related-posts">
+        <div class="row">
+          <div class="col col-12">
+            <div class="container__inner">
+              <h3 class="related-title">{{t "You may also like"}}</h3>
+              <div class="row grid">
+                {{#foreach related visibility="all"}}
+                  <div class="article col col-4 col-d-6 col-t-12 grid__post">
+                    <div class="article__inner">
+
+                      <a class="article__image" href="{{url}}">
+                        {{#if feature_image}}
+                          <img class="lazy" data-src="{{img_url feature_image}}" alt="{{title}}">
+                        {{/if}}
+                      </a>
+                    
+                      <div class="article__content">
+                    
+                        <div class="article__meta">
+                          <span class="article__minutes">
+                            {{reading_time}}
+                          </span>
+                          <time class="article__date" datetime="{{date format="YYYY-MM-DD"}}">{{date format="MMM DD, YYYY"}}</time>
+                        </div>
+                    
+                        <h2 class="article__title">
+                          <a href="{{url}}">{{title}}</a>
+                        </h2>
+                    
+                        <p class="article__excerpt">
+                          {{excerpt characters="142"}}
+                        </p>
+                    
+                        <div class="article__bottom">
+                          {{#primary_author}}
+                          <div class="article__author">
+                            <a href="{{url}}" aria-label=""><img class="article__author-image lazy" data-src="{{img_url profile_image}}"
+                                alt="{{name}}'s Picture"></a>
+                          </div>
+                          {{/primary_author}}
+                    
+                          <div class="article__bottom-meta">
+                            {{#primary_author}}
+                            <a href="{{url}}" class="article__author-link">{{name}}</a>
+                            {{/primary_author}}
+                            {{#has tag="count:>0"}}
+                            <span>in</span>
+                            <span class="article-tags">
+                              {{tags separator="&#xA0;"}}
+                            </span>
+                            {{/has}}
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+                {{/foreach}}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  {{/if}}
+{{/get}}

@@ -1,0 +1,90 @@
+/* Author Page */
+.author-profile {
+  max-width: 540px;
+  width: 100%;
+  margin: 40px auto 80px;
+  text-align: center;
+
+  .author-image-box {
+    margin-bottom: 20px;
+  }
+
+  .author__image {
+    display: block;
+    width: 140px;
+    height: 140px;
+    margin: 0 auto;
+    padding: 6px;
+    border: 3px solid $brand-color;
+    border-radius: 50%;
+    box-shadow: 0 5px 10px 0px rgba(0,0,0,.2);
+    background-color: $dark;
+  }
+
+  .author-title {
+    margin-bottom: 20px;
+    font-size: 40px;
+  }
+
+  .author-bio {
+    margin-bottom: 20px;
+    font-family: $base-font-family;
+    font-size: 18px;
+    line-height: 28px;
+    font-weight: 400;
+  }
+
+  .icon-link {
+    margin-right: 8px;
+    padding-right: 8px;
+    font-size: 16px;
+    border-right: 1px solid rgba($white, .3);
+    color: $gray;
+
+    &:last-child {
+      margin-right: 0;
+      border-right: none;
+      padding-right: 0;
+    }
+
+    a {
+      color: $gray;
+    }
+  }
+
+  .twitter-link,
+  .facebook-link {
+    border-right-color: transparent;
+  }
+
+  .twitter-link a,
+  .facebook-link a,
+  .author-link a {
+    &:hover {
+      color: $brand-color;
+    }
+  }
+
+  @media only screen and (max-width: $mobile) {
+    margin: 20px auto 60px;
+
+    .author-image-box {
+      margin-bottom: 15px;
+    }
+    
+    .author-title {
+      margin-bottom: 15px;
+      font-size: 37px;
+    }
+
+    .author-bio {
+      margin-bottom: 15px;
+      font-size: 16px;
+      line-height: 28px;
+    }
+
+    .icon-link {
+      font-size: 14px;
+    }
+  }
+}

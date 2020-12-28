@@ -1,0 +1,94 @@
+<!-- begin header -->
+<div class="header {{#is "home, page"}}header--top{{/is}}">
+  <div class="container">
+    <div class="row">
+      <div class="header__inner col col-12">
+
+        <div class="logo">
+          <a class="logo__link" href="{{@site.url}}">
+            {{#if @site.logo}}
+              <img class="logo__image" src="{{@site.logo}}" alt="{{@site.title}}">
+            {{else}}
+              {{@site.title}}
+            {{/if}}
+          </a>
+        </div>
+
+        <div class="menu-overlay">
+          <nav class="main-nav">
+            <div class="main-nav__box">
+              <div class="nav__icon-close">
+                <i class="ion ion-md-close"></i>
+              </div>
+              <div class="nav-grid">
+                <div class="nav-grid__item">
+                  <h2 class="nav-grid__title">{{t "Menu"}}</h2>
+                  <div class="mobile-nav">
+                    <ul class="nav__list list-reset">
+                    {{#if @site.navigation}}
+                      {{navigation}}
+                    {{/if}}
+                    {{#if @labs.members}}
+                      {{#if @member}}
+                      <li class="nav__item">
+                        <a class="nav__link account-link" href="/account/">{{t "Account"}}</a>
+                      </li>
+                      <li class="nav__item">
+                        <a class="nav__link signout-link" href="#signout" data-members-signout>{{t "Log out"}}</a>
+                      </li>
+                      {{else}}
+                      <li class="nav__item">
+                        <a class="nav__link signin-link" href="/signin/">{{t "Log in"}}</a>
+                      </li>
+                      <li class="nav__item">
+                        <a class="nav__link signup-link" href="/signup/">{{t "Sign up"}}</a>
+                      </li>
+                      {{/if}}
+                    {{/if}}
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </nav>
+        </div>
+
+        <div class="navigation">
+          <div class="top-nav">
+            <ul class="nav__list list-reset">
+              {{#if @site.navigation}}
+                {{navigation}}
+              {{/if}}
+              {{#if @labs.members}}
+                {{#if @member}}
+                <li class="nav__item">
+                  <a class="nav__link account-link" href="/account/">{{t "Account"}}</a>
+                </li>
+                <li class="nav__item">
+                  <a class="nav__link signout-link" href="#signout" data-members-signout>{{t "Log out"}}</a>
+                </li>
+                {{else}}
+                <li class="nav__item">
+                  <a class="nav__link signin-link" href="/signin/">{{t "Log in"}}</a>
+                </li>
+                <li class="nav__item">
+                  <a class="nav__link signup-link" href="/signup/">{{t "Sign up"}}</a>
+                </li>
+                {{/if}}
+              {{/if}}
+            </ul>
+          </div>
+        </div>
+
+        <div class="nav-buttons">
+          <i class="nav__icon nav__icon-menu ion ion-md-menu"></i>
+          <i class="nav__icon nav__icon-search ion ion-md-search"></i>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+<!-- end header -->
+
+{{> "search"}}

@@ -15,4 +15,5 @@ themes=(
 for theme in "${themes[@]}"
 do
 	cp -Rf "node_modules/$theme" content/themes
+	cp -Rf "bin/$theme" content/themes
 done

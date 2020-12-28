@@ -1,0 +1,38 @@
+{{!< ../default}}
+
+<div class="container">
+  <div class="row">
+    <div class="col col-12">
+
+      {{#if @member.paid}}
+      
+      {{!-- Logged in, paying member: Show account info --}}
+      <div class="subscriber-box animate">
+        <h1 class="subscriber__title">{{t "Nice, you're a subscriber!"}}</h1>
+        <p class="subscription__desc">
+          {{t "Hey! You have an active"}} {{@site.title}} {{t "account with access to all posts. Get in touch if have any problems or need some help getting things updated, and thanks for subscribing"}}.
+        </p>
+      </div>
+      
+      {{else if @member}}
+      
+      {{!-- Logged in, not paying: Link to checkout --}}
+      <div class="account-box animate">
+        <h1 class="account__title">{{t "You're not a subscriber"}}</h1>
+        <p class="account__desc">{{t "Hey there!"}} <strong>{{@member.email}}</strong> {{t "is subscribed to free updates from"}} {{@site.title}}, {{t "but doesn't have a paid subscription to unlock full access."}}</p>
+        <div class="authbox-signup">
+          <a class="button button--primary" href="/signup/">{{t "Subscribe now"}}</a>
+        </div>
+      </div>
+      
+      {{else}}
+      
+      {{!-- Not logged in: Redirect to signin --}}
+      <script>window.location = '{{@site.url}}/signin/';</script>
+      
+      {{/if}}
+
+      <hr>
+    </div>
+  </div>
+</div>

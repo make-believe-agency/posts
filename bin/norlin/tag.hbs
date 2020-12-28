@@ -1,0 +1,36 @@
+{{!< default}}
+{{! The tag above means - insert everything in this file into the {body} of the default.hbs template }}
+
+{{#tag}}
+<div class="container">
+  <div class="row">
+    <div class="col col-8 col-d-10 col-m-12 push-m-0 push-d-1 push-2">
+      <div class="archive-box">
+        <span class="archive-meta">{{plural ../pagination.total empty=(t "posts") singular=(t "% post") plural=(t "% posts")}} {{t "tagged"}}</span>
+        <h1 class="archive-title">{{name}}</h1>
+        {{#if description}}
+        <p class="archive-description">
+          {{description}}
+        </p>
+        {{/if}}
+      </div>
+    </div>
+  </div>
+</div>
+{{/tag}}
+
+<div class="container">
+  <div class="row">
+    <div class="col col-12 col-d-10 col-m-12 push-m-0 push-d-1">
+      <div class="container__inner">
+        <div class="contaniner__inner-box">
+          <div class="row grid">
+            {{> "loop"}}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{{pagination}}

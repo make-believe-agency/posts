@@ -1,0 +1,81 @@
+{{^is "paged"}}
+  {{#get "posts" filter="featured:true" include="tags,authors"}}
+    {{#if posts}}
+      <!-- begin featured post -->
+      <div class="featured-post">
+        <div class="container">
+          <div class="row">
+            <div class="col col-12">
+              <div class="container__inner">
+                <div class="row">
+                  {{#foreach posts visibility="all"}}
+                    <div class="article col col-4 col-d-6 col-t-12 animate">
+                      <div class="article__inner">
+
+                        {{#if featured}}
+                          <span class="featured-post ion ion-ios-star-outline"></span>
+                        {{/if}}
+
+                        {{#if feature_image}}
+                          <a class="article__image" href="{{url}}">
+                            <img class="lazy" data-src="{{img_url feature_image}}" alt="{{title}}">
+                          </a>
+                        {{/if}}
+                      
+                        <div class="article__content">
+                          <div class="article__meta">
+                            <span class="article__minutes">
+                              {{reading_time}}
+                            </span>
+                            <time class="article__date" datetime="{{date format="YYYY-MM-DD"}}">{{date format="MMM DD, YYYY"}}</time>
+                          </div>
+
+                          <h2 class="article__title">
+                            <a href="{{url}}">{{title}}</a>
+                          </h2>
+
+                          <p class="article__excerpt">
+                            {{excerpt characters="142"}}
+                          </p>
+
+                          <div class="article__bottom">
+
+                            {{#primary_author}}
+                            <div class="article__author">
+                              <a href="{{url}}" aria-label=""><img class="article__author-image lazy" data-src="{{img_url profile_image}}" alt="{{name}}'s Picture"></a>
+                            </div>
+                            {{/primary_author}}
+                            
+                            <div class="article__bottom-meta">
+                              {{#has author="count:>1"}}
+                                {{#primary_author}}
+                                  <a href="{{url}}" class="article__author-link">{{name}}</a> <span>& others</span>
+                                {{/primary_author}}
+                              {{else}}
+                              {{#primary_author}}
+                                <a href="{{url}}" class="article__author-link">{{name}}</a>
+                              {{/primary_author}}
+                              {{/has}}
+                              {{#has tag="count:>0"}}
+                              <span>in</span>
+                              <span class="article-tags">
+                                {{tags separator="&#xA0;"}}
+                              </span>
+                              {{/has}}
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+                    </div>
+                  {{/foreach}}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- end featured post -->
+    {{/if}}
+  {{/get}}
+{{/is}}

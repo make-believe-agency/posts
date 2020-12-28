@@ -1,0 +1,77 @@
+{
+  "Menu": "Menu",
+  "Account": "Account",
+  "Log out": "Log out",
+  "Log in": "Log in",
+  "Sign up": "Sign up",
+
+  "Paid": "Paid",
+  "Members": "Members",
+
+  "Welcome back!": "Welcome back!",
+  "Sign into your account again for full access.": "Sign into your account again for full access.",
+  "Your email address": "Your email address",
+  "Send login link": "Send login link",
+  "Great! Check your inbox and click the link to complete signin": "Great! Check your inbox and click the link to complete signin",
+  "Don't have an account yet?": "Don't have an account yet?",
+
+  "Choose your subscription": "Choose your subscription",
+  "Unlock full access to": "Unlock full access to",
+  "and see the entire library of members-only content & updates": "and see the entire library of members-only content & updates",
+  "Yearly": "Yearly",
+  "year": "year",
+  "Monthly": "Monthly",
+  "month": "month",
+  "Full access to all private posts": "Full access to all private posts",
+  "Regular updates with new content": "Regular updates with new content",
+  "Support independent publishing": "Support independent publishing",
+  "Simple, secure card payment": "Simple, secure card payment",
+  "One easy payment instead of 12!": "One easy payment instead of 12!",
+  "Choose this plan": "Choose this plan",
+
+  "Signup to": "Signup to",
+  "Unlock full access and see the entire library of members-only content & updates.": "Unlock full access and see the entire library of members-only content & updates.",
+  "Type your email...": "Type your email...",
+  "Continue": "Continue",
+  "Great! Check your inbox and click the link to confirm your subscription": "Great! Check your inbox and click the link to confirm your subscription",
+  "Already have an account?": "Already have an account?",
+
+  "Nice, you're a subscriber!": "Nice, you're a subscriber!",
+  "Hey! You have an active": "Hey! You have an active",
+  "account with access to all posts. Get in touch if have any problems or need some help getting things updated, and thanks for subscribing": "account with access to all posts. Get in touch if have any problems or need some help getting things updated, and thanks for subscribing",
+  "You're not a subscriber": "You're not a subscriber",
+  "Hey there!": "Hey there!",
+  "is subscribed to free updates from": "is subscribed to free updates from",
+  "but doesn't have a paid subscription to unlock full access.": "but doesn't have a paid subscription to unlock full access.",
+  "Subscribe now": "Subscribe now",
+  "You don't have access to this post on": "You don't have access to this post on",
+  "at the moment, but if you upgrade your account you'll be able to see the whole thing, as well as all the other posts in the archive! Subscribing only takes a few seconds and will give you immediate access.": "at the moment, but if you upgrade your account you'll be able to see the whole thing, as well as all the other posts in the archive! Subscribing only takes a few seconds and will give you immediate access.",
+  "This post is for paying subscribers only": "This post is for paying subscribers only",
+  "This post is for subscribers only": "This post is for subscribers only",
+
+  "posts": "posts",
+  "% post": "% post",
+  "% posts": "% posts",
+  "tagged": "tagged",
+
+  "Latest Posts": "Latest Posts",
+
+  "Explore Tags": "Explore Tags",
+
+  "Get Interesting News": "Get Interesting News",
+  "Subscribe to our newsletter and we’ll send you the emails of latest posts.": "Subscribe to our newsletter and we’ll send you the emails of latest posts.",
+  "Email Address": "Email Address",
+  "Join": "Join",
+  "Subscribe": "Subscribe",
+  "Please wait...": "Please wait...",
+  "Please check your inbox and click the link to confirm your subscription.": "Please check your inbox and click the link to confirm your subscription.",
+  "Please enter a valid email address!": "Please enter a valid email address!",
+
+  "All Right Reserved.": "All Right Reserved.",
+  "Published with {ghostlink}": "Published with {ghostlink}",
+
+  "You've successfully subscribed to": "You've successfully subscribed to",
+  "Great! Next, complete checkout for full access to": "Great! Next, complete checkout for full access to",
+  "Welcome back! You've successfully signed in": "Welcome back! You've successfully signed in",
+  "Success! Your account is fully activated, you now have access to all content.": "Success! Your account is fully activated, you now have access to all content."
+}

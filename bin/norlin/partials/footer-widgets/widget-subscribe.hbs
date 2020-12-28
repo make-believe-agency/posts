@@ -1,0 +1,21 @@
+{{#if @labs.members}}
+<div class="col col-4 col-d-6 col-t-12">
+  <div class="widget widget-subscribe">
+    <div class="widget__head">
+      <h3 class="widget__title">{{t "Get Interesting News"}}</h3>
+    </div>
+    <p class="subscribe-subtitle">{{t "Subscribe to our newsletter and we’ll send you the emails of latest posts."}}</p>
+    <form class="subscribe-form" data-members-form="subscribe">
+      <div class="subscribe-group">
+        <div class="subscribe-group-top">
+          <input class="subscribe-email" type="email" placeholder="{{t "Email Address"}}" data-members-email>
+          <button class="subscribe-button button button--primary" type="submit">{{t "Join"}}</button>
+        </div>
+        <div class="alert alert--loading">{{t "Please wait..."}}</div>
+        <div class="alert alert--success">{{t "Please check your inbox and click the link to confirm your subscription."}}</div>
+        <div class="alert alert--error">{{t "Please enter a valid email address!"}}</div>
+      </div>
+    </form>
+  </div>
+</div>
+{{/if}}

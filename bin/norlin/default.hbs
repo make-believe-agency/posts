@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="{{@site.lang}}">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  {{!-- Base Meta --}}
+  <title>{{meta_title}}</title>
+
+
+  {{!-- Fonts --}}
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
+
+  {{!-- Ionicons --}}
+  <link href="https://unpkg.com/ionicons@4.2.2/dist/css/ionicons.min.css" rel="stylesheet">
+
+  {{!-- Main Styles --}}
+  <link rel="stylesheet" href="{{asset "css/main.min.css"}}">
+
+  {{!-- Ajax Load More required variables --}}
+  <script>
+    var pagination_next_page_number = '{{ pagination.next }}',
+        pagination_available_pages_number = '{{ pagination.pages }}';
+  </script>
+  
+  {{!-- This tag outputs SEO meta+structured data and other important settings --}}
+  {{ghost_head}}
+</head>
+
+<body class="{{body_class}}">
+
+  {{> "notifications"}}
+
+  {{> "header"}}
+  
+  <!-- begin content -->
+  <main class="content" aria-label="Content">
+    {{{body}}}
+  </main>
+  <!-- end content -->
+
+  <div class="top" title="Top"><i class="ion ion-ios-arrow-up"></i></div>
+
+
+  {{> "footer"}}
+
+  <!-- Theme Scripts -->
+  <script src="{{asset "js/common.min.js"}}"></script>
+  <script>
+    
+  // Scripts for Members subscription
+
+  // Parse the URL parameter
+  function getParameterByName(name, url) {
+    if (!url) url = window.location.href;
+    name = name.replace(/[\[\]]/g, "\\$&");
+    var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+      results = regex.exec(url);
+    if (!results) return null;
+    if (!results[2]) return '';
+    return decodeURIComponent(results[2].replace(/\+/g, " "));
+  }
+
+  // Give the parameter a variable name
+  var action = getParameterByName('action');
+  var stripe = getParameterByName('stripe');
+
+  $(document).ready(function () {
+    if (action == 'subscribe') {
+      $('body').addClass("subscribe-success");
+    }
+    if (action == 'signup') {
+      window.location = '{{@site.url}}/signup/?action=checkout';
+    }
+    if (action == 'checkout') {
+      $('body').addClass("signup-success");
+    }
+    if (action == 'signin') {
+      $('body').addClass("signin-success");
+    }
+    if (stripe == 'success') {
+      $('body').addClass("checkout-success");
+    }
+
+    $('.notification-close').click(function () {
+      $(this).parent().addClass('closed');
+      var uri = window.location.toString();
+      if (uri.indexOf("?") > 0) {
+        var clean_uri = uri.substring(0, uri.indexOf("?"));
+        window.history.replaceState({}, document.title, clean_uri);
+      }
+    });
+  });
+  </script>
+  {{! Ghost outputs important scripts and data with this tag }}
+  {{ghost_foot}}
+</body>
+
+</html>

@@ -1,0 +1,69 @@
+{{!< default}}
+
+{{#post}}
+
+{{!-- begin hero --}}
+{{#if feature_image}}
+<section class="hero">
+  <div class="hero__inner">
+    <div class="hero__image">
+      <img class="lazy" data-src="{{feature_image}}" alt="{{title}}">
+    </div>
+    <div class="hero__content">
+      <h1 class="hero__title">{{title}}</h1>
+    </div>
+  </div>
+</section>
+{{else}}
+<section class="hero-without-image">
+  <div class="hero-inner">
+    <div class="hero-content">
+      <h1 class="hero__title">{{title}}</h1>
+    </div>
+  </div>
+</section>
+{{/if}}
+{{!-- end hero --}}
+
+<div class="container">
+  <div class="row">
+    <div class="col col-8 col-d-10 push-2 push-d-1 col-t-12 push-t-0">
+      <!-- begin page -->
+      <article class="page animate">
+        {{#if access}}
+          {{!-- if the user has access to this page, show it to them --}}
+
+          <div class="page__content">
+            {{ content }}
+          </div>
+
+          {{else}}
+
+          {{!-- if the user does not have access, show them an upgrade CTA --}}
+          <div class="post-full-content">
+            <div class="post-content">
+              <p>{{t "You don't have access to this post on"}} <strong>{{@site.title}}</strong> {{t "at the moment, but if you upgrade your account you'll be able to see the whole thing, as well as all the other posts in the archive! Subscribing only takes a few seconds and will give you immediate access."}}</p>
+            </div>
+            <aside class="post-upgrade-cta">
+              <div class="post-upgrade-cta-content">
+                {{#if @member}}
+                <h2>{{t "This post is for paying subscribers only"}}</h2>
+                {{else}}
+                <h2>{{t "This post is for subscribers only"}}</h2>
+                {{/if}}
+                <a class="button button--primary" href="/signup/">{{t "Subscribe now"}}</a>
+                <p class="signin__bottom-text"><small>{{t "Already have an account?"}} <a href="/signin/">{{t "Sign in"}}</a></small></p>
+              </div>
+            </aside>
+            <hr>
+          </div>
+        
+        {{/if}}
+
+      </article>
+      <!-- end page -->
+    </div>
+  </div>
+</div>
+
+{{/post}}

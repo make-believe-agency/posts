@@ -1,0 +1,52 @@
+{{!< default}}
+{{!-- The tag above means - insert everything in this file into the {body} of the default.hbs template --}}
+
+{{!-- Everything inside the #author tags pulls data from the author --}}
+{{#author}}
+<div class="container">
+  <div class="row">
+    <div class="col col-8 col-d-10 col-m-12 push-m-0 push-d-1 push-2">
+      <div class="author-profile">
+        {{#if profile_image}}
+          <figure class="author-image-box">
+            <img class="author__image lazy" data-src="{{profile_image}}" alt="{{name}}">
+          </figure>
+        {{/if}}
+          <h1 class="author-title">{{name}}</h1>
+        {{#if bio}}
+          <h2 class="author-bio">{{bio}}</h2>
+        {{/if}}
+        <div class="author-meta">
+          {{#if twitter}}
+            <span class="twitter-link icon-link"><a href="{{twitter_url}}" target="_blank" rel="noopener"><i class="ion ion-logo-twitter"></i></a></span>
+          {{/if}}
+          {{#if facebook}}
+            <span class="facebook-link icon-link"><a href="{{facebook_url}}" target="_blank" rel="noopener"><i class="ion ion-logo-facebook"></i></a></span>
+          {{/if}}
+          {{#if website}}
+            <span class="author-link icon-link"><a href="{{website}}" target="_blank" rel="noopener"><i class="ion ion-ios-link"></i></a></span>
+          {{/if}}
+          {{#if location}}
+            <span class="author-location icon-link"><i class="ion ion-ios-pin"></i> {{location}}</span>
+          {{/if}}
+            <span class="author-stats icon-link"><i class="ion ion-ios-stats"></i> {{plural ../pagination.total empty='No posts' singular='% post' plural='% posts'}}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{{/author}}
+
+<div class="container">
+  <div class="row">
+    <div class="col col-12">
+      <div class="container__inner">
+        <div class="row grid">
+          {{> "loop"}}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{{pagination}}

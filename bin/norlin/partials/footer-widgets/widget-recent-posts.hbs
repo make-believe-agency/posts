@@ -1,0 +1,47 @@
+<div class="col col-4 col-d-6 col-t-12">
+  <div class="widget widget-recent">
+
+    <div class="widget__head">
+      <h3 class="widget__title">{{t "Latest Posts"}}</h3>
+    </div>
+
+    {{#get "posts" limit="2" include="authors" order="published_at desc"}}
+      {{#foreach posts visibility="all"}}
+        <div class="recent-posts">
+
+          <a class="recent-posts__image" href="{{url}}">
+            {{#if feature_image}}
+              <img src="{{img_url feature_image}}" alt="{{title}}">
+            {{/if}}
+          </a>
+
+          <div class="recent-posts__content">
+            <div class="article__meta">
+              <span class="article__minutes">
+                {{reading_time}}
+              </span>
+              <time class="article__date" datetime="{{date format="YYYY-MM-DD"}}">{{date format="MMM DD, YYYY"}}</time>
+            </div>
+
+            <h4 class="recent-posts__title"><a href="{{url}}">{{title}}</a></h4>
+
+            <div class="article__bottom">
+              {{#primary_author}}
+                <div class="article__author">
+                  <a href="{{url}}" aria-label=""><img class="article__author-image lazy" data-src="{{img_url profile_image}}" alt="{{name}}'s Picture"></a>
+                </div>
+              {{/primary_author}}
+            
+              <div class="article__bottom-meta">
+                {{#primary_author}}
+                  <a href="{{url}}" class="article__author-link">{{name}}</a>
+                {{/primary_author}}
+              </div>
+            </div>
+
+          </div>
+        </div>
+      {{/foreach}}
+    {{/get}}
+  </div>
+</div>

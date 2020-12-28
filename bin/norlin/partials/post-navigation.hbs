@@ -1,0 +1,21 @@
+<div class="post__navigation">
+  {{#prev_post}}
+  <a class="prev" href="{{url}}">
+    <img class="post__nav-image lazy" data-src="{{feature_image}}" alt="{{name}}">
+    <div class="post__nav-box">
+      <div class="post__nav post__nav__prev"><i class="ion ion-ios-arrow-back"></i> Previous
+        Post</div>
+      <h4 class="post__nav__title">{{title}}</h4>
+    </div>
+  </a>
+  {{/prev_post}}
+  {{#next_post}}
+  <a class="next" href="{{url}}">
+    <img class="post__nav-image lazy" data-src="{{feature_image}}" alt="{{name}}">
+    <div class="post__nav-box">
+      <div class="post__nav post__nav__next">Next Post <i class="ion ion-ios-arrow-forward"></i></div>
+      <h4 class="post__nav__title">{{title}}</h4>
+    </div>
+  </a>
+  {{/next_post}}
+</div>
